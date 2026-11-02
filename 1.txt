@@ -1,16 +1,4 @@
-i am sharing you my details 
-please create my portfolio
-using only HTML and CSS
 
-make it responsive,colourful,styling and appealing
-
-here are my details-
-Hi, I’m Kritika Garg, a B.Tech student specialising in Computer Engineering and Artificial Intelligence. I’m currently exploring the intersection of technology, artificial intelligence, and real-world problem solving.
-
-I am from a non-tech background . My dream is to go in INDIAN AIR FORCE after completing my degree . I have won state badminton , district  karate and zone level boxing . I have won numerous academics reward like certificates , trophies and medals . My hobbies include sketching , listening , reading , coking and travelling . The combo of all in once is a hit .  I was head girl of my school for 2 year and my parents were proud of me for being capable of doing and initiating things in school , this is the thing that makes me proud .
-
-I’m currently doing  programming and computer science while exploring areas such as Artificial Intelligence and technology-driven solutions. In future , I will chase my dream of being in Indian Air Force .
-People can reach me through my email ~ kritikagarg1611@gmail.com 
 
 
 <!DOCTYPE html>
