@@ -11,3 +11,1029 @@ I am from a non-tech background . My dream is to go in INDIAN AIR FORCE after co
 
 I’m currently doing  programming and computer science while exploring areas such as Artificial Intelligence and technology-driven solutions. In future , I will chase my dream of being in Indian Air Force .
 People can reach me through my email ~ kritikagarg1611@gmail.com 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kritika Garg | Portfolio</title>
+  <style>
+    /* ───── RESET & BASE ───── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0a0f2c;
+      --indigo: #1a1f5e;
+      --violet: #6c3fc5;
+      --pink:   #e040fb;
+      --cyan:   #00e5ff;
+      --gold:   #ffd740;
+      --white:  #f0f4ff;
+      --glass:  rgba(255,255,255,0.07);
+      --border: rgba(255,255,255,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ───── ANIMATED BACKGROUND ───── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 10%, rgba(108,63,197,.35) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 80% 90%, rgba(0,229,255,.2) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 50% 50%, rgba(224,64,251,.15) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ───── PARTICLES ───── */
+    .particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      animation: float linear infinite;
+      opacity: 0;
+    }
+    @keyframes float {
+      0%   { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+      10%  { opacity: .6; }
+      90%  { opacity: .6; }
+      100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+    }
+
+    /* ───── NAV ───── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2.5rem;
+      background: rgba(10,15,44,.7);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--cyan), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 1px;
+    }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 500;
+      letter-spacing: .5px;
+      transition: color .3s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--pink));
+      transition: width .3s;
+    }
+    .nav-links a:hover { color: var(--cyan); }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px; height: 3px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: .3s;
+    }
+
+    /* ───── SECTIONS ───── */
+    section { position: relative; z-index: 1; }
+
+    /* ───── HERO ───── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 7rem 1.5rem 4rem;
+      flex-direction: column;
+    }
+    .avatar-wrapper {
+      position: relative;
+      width: 160px; height: 160px;
+      margin-bottom: 2rem;
+    }
+    .avatar-ring {
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan), var(--pink), var(--gold));
+      animation: spin 6s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .avatar-inner {
+      position: absolute;
+      inset: 6px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--indigo), var(--navy));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4.5rem;
+      z-index: 1;
+    }
+    .hero-greeting {
+      font-size: 1.1rem;
+      color: var(--cyan);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: .8rem;
+      animation: fadeUp .8s ease both;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #fff 30%, var(--pink) 70%, var(--cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeUp .9s .1s ease both;
+    }
+    .hero-subtitle {
+      margin-top: 1rem;
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: rgba(240,244,255,.7);
+      max-width: 550px;
+      line-height: 1.7;
+      animation: fadeUp 1s .2s ease both;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .7rem;
+      justify-content: center;
+      margin-top: 1.8rem;
+      animation: fadeUp 1s .3s ease both;
+    }
+    .badge {
+      padding: .4rem 1.1rem;
+      border-radius: 50px;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .5px;
+      border: 1.5px solid transparent;
+    }
+    .badge-cyan  { background: rgba(0,229,255,.12); border-color: var(--cyan);  color: var(--cyan); }
+    .badge-pink  { background: rgba(224,64,251,.12); border-color: var(--pink);  color: var(--pink); }
+    .badge-gold  { background: rgba(255,215,64,.12); border-color: var(--gold);  color: var(--gold); }
+    .badge-violet{ background: rgba(108,63,197,.18); border-color: var(--violet);color: #c49dff; }
+
+    .cta-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: .85rem 2.2rem;
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--violet), var(--pink));
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1rem;
+      letter-spacing: .5px;
+      box-shadow: 0 0 30px rgba(224,64,251,.4);
+      transition: transform .3s, box-shadow .3s;
+      animation: fadeUp 1s .4s ease both;
+    }
+    .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 0 50px rgba(224,64,251,.6); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ───── SCROLL INDICATOR ───── */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .4rem;
+      color: rgba(240,244,255,.4);
+      font-size: .75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .scroll-arrow {
+      width: 24px; height: 24px;
+      border-right: 2px solid var(--cyan);
+      border-bottom: 2px solid var(--cyan);
+      transform: rotate(45deg);
+      animation: bounce 1.5s infinite;
+    }
+    @keyframes bounce {
+      0%,100% { transform: rotate(45deg) translateY(0); }
+      50%      { transform: rotate(45deg) translateY(6px); }
+    }
+
+    /* ───── SECTION WRAPPER ───── */
+    .section-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .section-title h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--cyan), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section-title p {
+      color: rgba(240,244,255,.55);
+      margin-top: .5rem;
+      font-size: .95rem;
+    }
+    .divider {
+      width: 70px; height: 4px;
+      background: linear-gradient(90deg, var(--cyan), var(--pink));
+      border-radius: 2px;
+      margin: .8rem auto 0;
+    }
+
+    /* ───── GLASS CARD ───── */
+    .card {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      padding: 2rem;
+      transition: transform .35s, box-shadow .35s;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(108,63,197,.25);
+    }
+
+    /* ───── ABOUT ───── */
+    #about { background: rgba(255,255,255,.02); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .about-text p {
+      color: rgba(240,244,255,.75);
+      line-height: 1.9;
+      margin-bottom: 1rem;
+      font-size: .97rem;
+    }
+    .about-text p strong { color: var(--cyan); }
+    .about-highlight {
+      background: linear-gradient(135deg, rgba(108,63,197,.25), rgba(0,229,255,.1));
+      border: 1px solid rgba(0,229,255,.2);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+    .about-highlight h3 {
+      font-size: 1rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .stat-row {
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+    }
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+    .stat-icon { font-size: 1.4rem; }
+    .stat-text { font-size: .9rem; color: rgba(240,244,255,.8); line-height: 1.4; }
+    .stat-text strong { color: var(--white); display: block; font-size: .95rem; }
+
+    /* ───── DREAM SECTION ───── */
+    #dream { position: relative; overflow: hidden; }
+    #dream::before {
+      content: '✈';
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12rem;
+      opacity: .04;
+      pointer-events: none;
+    }
+    .dream-content {
+      max-width: 750px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .dream-icon {
+      font-size: 5rem;
+      margin-bottom: 1.5rem;
+      display: block;
+      animation: pulse 3s ease infinite;
+    }
+    @keyframes pulse {
+      0%,100% { transform: scale(1); }
+      50%      { transform: scale(1.08); }
+    }
+    .dream-text {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: rgba(240,244,255,.8);
+    }
+    .dream-text .highlight-text {
+      background: linear-gradient(90deg, var(--gold), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+    }
+    .iaf-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      margin-top: 2rem;
+      padding: .7rem 1.8rem;
+      background: linear-gradient(135deg, rgba(0,100,0,.3), rgba(0,180,0,.1));
+      border: 1.5px solid rgba(0,255,100,.3);
+      border-radius: 50px;
+      font-weight: 700;
+      color: #5dff9a;
+      font-size: 1rem;
+      letter-spacing: 1px;
+    }
+
+    /* ───── ACHIEVEMENTS ───── */
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .achievement-card {
+      text-align: center;
+      padding: 2rem 1.5rem;
+    }
+    .ach-icon {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .ach-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: .4rem;
+    }
+    .ach-desc {
+      font-size: .85rem;
+      color: rgba(240,244,255,.6);
+      line-height: 1.6;
+    }
+    .ach-level {
+      display: inline-block;
+      margin-top: .6rem;
+      padding: .25rem .8rem;
+      border-radius: 50px;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .5px;
+    }
+    .level-state   { background: rgba(255,215,64,.15); color: var(--gold); border: 1px solid rgba(255,215,64,.3); }
+    .level-district{ background: rgba(0,229,255,.15); color: var(--cyan); border: 1px solid rgba(0,229,255,.3); }
+    .level-zone    { background: rgba(224,64,251,.15); color: var(--pink); border: 1px solid rgba(224,64,251,.3); }
+    .level-school  { background: rgba(108,63,197,.25); color: #c49dff; border: 1px solid rgba(108,63,197,.4); }
+    .level-acad    { background: rgba(93,255,154,.15); color: #5dff9a; border: 1px solid rgba(93,255,154,.3); }
+
+    /* ───── SKILLS / TECH ───── */
+    #skills { background: rgba(255,255,255,.02); }
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .skill-group h3 {
+      font-size: .9rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 1.2rem;
+    }
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+    }
+    .skill-pill {
+      padding: .4rem 1rem;
+      border-radius: 50px;
+      font-size: .82rem;
+      font-weight: 600;
+      background: var(--glass);
+      border: 1px solid var(--border);
+      transition: transform .2s, border-color .2s;
+      cursor: default;
+    }
+    .skill-pill:hover { transform: scale(1.05); border-color: var(--cyan); }
+    .sp-violet { border-color: rgba(108,63,197,.5); color: #c49dff; }
+    .sp-cyan   { border-color: rgba(0,229,255,.4);  color: var(--cyan); }
+    .sp-pink   { border-color: rgba(224,64,251,.4); color: #f3a0ff; }
+    .sp-gold   { border-color: rgba(255,215,64,.4); color: var(--gold); }
+    .sp-green  { border-color: rgba(93,255,154,.4); color: #5dff9a; }
+
+    /* ───── HOBBIES ───── */
+    .hobbies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+    .hobby-card {
+      text-align: center;
+      padding: 1.8rem 1rem;
+      border-radius: 18px;
+      background: var(--glass);
+      border: 1px solid var(--border);
+      transition: transform .3s, background .3s;
+      cursor: default;
+    }
+    .hobby-card:hover {
+      transform: translateY(-5px) scale(1.03);
+      background: rgba(108,63,197,.2);
+      border-color: var(--violet);
+    }
+    .hobby-emoji { font-size: 2.5rem; margin-bottom: .6rem; display: block; }
+    .hobby-name  { font-size: .9rem; font-weight: 600; color: var(--white); }
+
+    /* ───── LEADERSHIP ───── */
+    #leadership { background: rgba(255,255,255,.02); }
+    .leadership-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.5rem;
+      align-items: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .leadership-icon-wrap {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--pink));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      flex-shrink: 0;
+    }
+    .leadership-text h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--gold);
+      margin-bottom: .4rem;
+    }
+    .leadership-text p {
+      color: rgba(240,244,255,.75);
+      line-height: 1.8;
+      font-size: .95rem;
+    }
+
+    /* ───── CONTACT ───── */
+    #contact { text-align: center; }
+    .contact-inner { max-width: 600px; margin: 0 auto; }
+    .contact-inner p {
+      color: rgba(240,244,255,.7);
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+    .contact-cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      padding: 1rem 1.8rem;
+      border-radius: 16px;
+      background: var(--glass);
+      border: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 600;
+      font-size: .9rem;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,229,255,.2);
+      border-color: var(--cyan);
+    }
+    .contact-icon { font-size: 1.4rem; }
+
+    /* ───── FOOTER ───── */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: rgba(240,244,255,.3);
+      font-size: .82rem;
+      border-top: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+    }
+    footer span { color: var(--pink); }
+
+    /* ───── RESPONSIVE ───── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0; right: 0;
+        background: rgba(10,15,44,.95);
+        backdrop-filter: blur(20px);
+        padding: 1.5rem;
+        gap: 1.2rem;
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+      .about-grid { grid-template-columns: 1fr; }
+      .leadership-card { grid-template-columns: 1fr; text-align: center; }
+      .leadership-icon-wrap { margin: 0 auto; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2.2rem; }
+      .section-wrap { padding: 3.5rem 1rem; }
+      .avatar-wrapper { width: 130px; height: 130px; }
+      .avatar-inner  { font-size: 3.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- PARTICLES -->
+<div class="particles" id="particles"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">KG✦</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#dream">Dream</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#hobbies">Hobbies</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="home">
+  <div class="avatar-wrapper">
+    <div class="avatar-ring"></div>
+    <div class="avatar-inner">👩‍💻</div>
+  </div>
+  <p class="hero-greeting">✦ Welcome to my world ✦</p>
+  <h1>Kritika Garg</h1>
+  <p class="hero-subtitle">
+    B.Tech student in <strong style="color:var(--cyan)">Computer Engineering &amp; AI</strong> —
+    where technology meets ambition, sports, and a sky-high dream.
+  </p>
+  <div class="hero-badges">
+    <span class="badge badge-cyan">🎓 B.Tech · CE &amp; AI</span>
+    <span class="badge badge-gold">✈️ IAF Aspirant</span>
+    <span class="badge badge-pink">🏆 State Badminton Champion</span>
+    <span class="badge badge-violet">💡 AI Explorer</span>
+  </div>
+  <a href="#contact" class="cta-btn">Let's Connect →</a>
+
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="section-wrap">
+    <div class="section-title">
+      <h2>About Me</h2>
+      <div class="divider"></div>
+      <p>A unique blend of tech, sports, and sky-high ambition</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-text card">
+        <p>
+          Hi! I'm <strong>Kritika Garg</strong>, a B.Tech student specialising in
+          <strong>Computer Engineering and Artificial Intelligence</strong>. 
+          I come from a <strong>non-tech background</strong>, which makes my journey into the world of 
+          programming and AI all the more meaningful and exciting.
+        </p>
+        <p>
+          I'm currently exploring the intersection of <strong>technology, artificial intelligence,
+          and real-world problem solving</strong> — diving deep into programming and computer science 
+          while building skills in AI-driven solutions.
+        </p>
+        <p>
+          What sets me apart? I believe the combo of academics, sports, leadership, and passion
+          is a <strong>hit</strong>. Every experience — from the badminton court to the classroom —
+          has shaped who I am today.
+        </p>
+      </div>
+      <div class="about-highlight">
+        <h3>⚡ Quick Facts</h3>
+        <div class="stat-row">
+          <div class="stat-item">
+            <span class="stat-icon">🎓</span>
+            <div class="stat-text">
+              <strong>B.Tech · Computer Engineering &amp; AI</strong>
+              Currently pursuing degree
+            </div>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🌟</span>
+            <div class="stat-text">
+              <strong>Non-tech Background</strong>
+              Passion-driven tech explorer
+            </div>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">👑</span>
+            <div class="stat-text">
+              <strong>Head Girl · 2 Years</strong>
+              School leadership &amp; initiative
+            </div>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🏅</span>
+            <div class="stat-text">
+              <strong>Multi-Sport Champion</strong>
+              Badminton · Karate · Boxing
+            </div>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">✈️</span>
+            <div class="stat-text">
+              <strong>IAF Aspirant</strong>
+              Dream bigger than the sky
+            </div>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">📧</span>
+            <div class="stat-text">
+              <strong>kritikagarg1611@gmail.com</strong>
+              Open to connect!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DREAM ── -->
+<section id="dream">
+  <div class="section-wrap">
+    <div class="section-title">
+      <h2>My Dream</h2>
+      <div class="divider"></div>
+      <p>Beyond the horizon — a mission written in the sky</p>
+    </div>
+    <div class="dream-content card">
+      <span class="dream-icon">✈️</span>
+      <p class="dream-text">
+        My ultimate dream is to serve in the
+        <span class="highlight-text">Indian Air Force</span>
+        after completing my degree. While I'm currently building expertise in
+        Computer Engineering and Artificial Intelligence, my heart soars with the vision
+        of wearing the IAF uniform and serving my nation.
+        <br/><br/>
+        I believe that the <span class="highlight-text">discipline, resilience, and leadership</span>
+        I've cultivated through sports and academics are the same qualities that will carry me
+        to that goal. The sky is not the limit — it's just the beginning.
+      </p>
+      <div>
+        <span class="iaf-badge">🇮🇳 &nbsp; Indian Air Force Aspirant</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ACHIEVEMENTS ── -->
+<section id="achievements">
+  <div class="section-wrap">
+    <div class="section-title">
+      <h2>Achievements</h2>
+      <div class="divider"></div>
+      <p>Trophies, medals, and memories that define the journey</p>
+    </div>
+    <div class="achievements-grid">
+
+      <div class="card achievement-card">
+        <span class="ach-icon">🏸</span>
+        <div class="ach-title">Badminton Champion</div>
+        <div class="ach-desc">Competed and won at the highest regional level, showcasing speed, agility, and strategy on the court.</div>
+        <span class="ach-level level-state">🥇 State Level</span>
+      </div>
+
+      <div class="card achievement-card">
+        <span class="ach-icon">🥋</span>
+        <div class="ach-title">Karate Winner</div>
+        <div class="ach-desc">Demonstrated discipline, focus, and combat skills to claim victory at district-level karate competitions.</div>
+        <span class="ach-level level-district">🥈 District Level</span>
+      </div>
+
+      <div class="card achievement-card">
+        <span class="ach-icon">🥊</span>
+        <div class="ach-title">Boxing Winner</div>
+        <div class="ach-desc">Proved strength and mental toughness in the boxing ring, winning at zone level competitions.</div>
+        <span class="ach-level level-zone">🏆 Zone Level</span>
+      </div>
+
+      <div class="card achievement-card">
+        <span class="ach-icon">👑</span>
+        <div class="ach-title">Head Girl</div>
+        <div class="ach-desc">Led the student body for 2 years, initiating impactful changes and earning the pride of parents and faculty.</div>
+        <span class="ach-level level-school">⭐ School Leadership</span>
+      </div>
+
+      <div class="card achievement-card">
+        <span class="ach-icon">🏆</span>
+        <div class="ach-title">Academic Excellence</div>
+        <div class="ach-desc">Numerous certificates, trophies, and medals for outstanding academic performance and school contributions.</div>
+        <span class="ach-level level-acad">📚 Academics</span>
+      </div>
+
+      <div class="card achievement-card">
+        <span class="ach-icon">💡</span>
+        <div class="ach-title">AI & Tech Explorer</div>
+        <div class="ach-desc">Pioneering into Artificial Intelligence and technology solutions from a non-tech background — a journey of pure passion.</div>
+        <span class="ach-level level-acad">🚀 Tech Journey</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── SKILLS ── -->
+<section id="skills">
+  <div class="section-wrap">
+    <div class="section-title">
+      <h2>Skills &amp; Expertise</h2>
+      <div class="divider"></div>
+      <p>From code to courts — a versatile skill set</p>
+    </div>
+    <div class="skills-container">
+
+      <div class="card skill-group">
+        <h3>💻 Technical</h3>
+        <div class="skill-pills">
+          <span class="skill-pill sp-violet">Programming</span>
+          <span class="skill-pill sp-violet">Computer Science</span>
+          <span class="skill-pill sp-cyan">Artificial Intelligence</span>
+          <span class="skill-pill sp-cyan">Technology Solutions</span>
+          <span class="skill-pill sp-pink">Problem Solving</span>
+        </div>
+      </div>
+
+      <div class="card skill-group">
+        <h3>🏅 Sports</h3>
+        <div class="skill-pills">
+          <span class="skill-pill sp-gold">Badminton 🏸</span>
+          <span class="skill-pill sp-gold">Karate 🥋</span>
+          <span class="skill-pill sp-gold">Boxing 🥊</span>
+          <span class="skill-pill sp-pink">Agility</span>
+          <span class="skill-pill sp-pink">Discipline</span>
+        </div>
+      </div>
+
+      <div class="card skill-group">
+        <h3>👩‍💼 Leadership</h3>
+        <div class="skill-pills">
+          <span class="skill-pill sp-green">Head Girl · 2 Yrs</span>
+          <span class="skill-pill sp-green">Team Leadership</span>
+          <span class="skill-pill sp-cyan">Initiative</span>
+          <span class="skill-pill sp-cyan">Communication</span>
+          <span class="skill-pill sp-violet">Decision Making</span>
+        </div>
+      </div>
+
+      <div class="card skill-group">
+        <h3>🎨 Creative</h3>
+        <div class="skill-pills">
+          <span class="skill-pill sp-pink">Sketching 🎨</span>
+          <span class="skill-pill sp-pink">Cooking 🍳</span>
+          <span class="skill-pill sp-violet">Reading 📚</span>
+          <span class="skill-pill sp-gold">Travelling ✈️</span>
+          <span class="skill-pill sp-cyan">Music 🎵</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── HOBBIES ── -->
+<section id="hobbies">
+  <div class="section-wrap">
+    <div class="section-title">
+      <h2>Hobbies &amp; Interests</h2>
+      <div class="divider"></div>
+      <p>The things that make life beautiful</p>
+    </div>
+    <div class="hobbies-grid">
+      <div class="hobby-card">
+        <span class="hobby-emoji">🎨</span>
+        <div class="hobby-name">Sketching</div>
+      </div>
+      <div class="hobby-card">
+        <span class="hobby-emoji">🎵</span>
+        <div class="hobby-name">Listening</div>
+      </div>
+      <div class="hobby-card">
+        <span class="hobby-emoji">📚</span>
+        <div class="hobby-name">Reading</div>
+      </div>
+      <div class="hobby-card">
+        <span class="hobby-emoji">🍳</span>
+        <div class="hobby-name">Cooking</div>
+      </div>
+      <div class="hobby-card">
+        <span class="hobby-emoji">✈️</span>
+        <div class="hobby-name">Travelling</div>
+      </div>
+      <div class="hobby-card">
+        <span class="hobby-emoji">💻</span>
+        <div class="hobby-name">Coding</div>
+      </div>
+    </div>
+    <div style="margin-top:2rem;">
+      <div class="card" style="text-align:center;padding:1.5rem 2rem;">
+        <p style="color:rgba(240,244,255,.7);font-style:italic;font-size:1.05rem;line-height:1.8;">
+          "The combo of all in once is a hit." 
+          <span style="color:var(--pink)">✨</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LEADERSHIP ── -->
+<section id="leadership">
+  <div class="section-wrap">
+    <div class="section-title">
+      <h2>Leadership</h2>
+      <div class="divider"></div>
+      <p>Leading with purpose and making a difference</p>
+    </div>
+    <div class="card">
+      <div class="leadership-card">
+        <div class="leadership-icon-wrap">👑</div>
+        <div class="leadership-text">
+          <h3>Head Girl — 2 Years</h3>
+          <p>
+            I had the honour of serving as <strong style="color:var(--gold)">Head Girl for two consecutive years</strong>
+            in my school. In this role, I took initiative, led by example, and drove meaningful changes
+            across school life. My parents were incredibly proud — seeing me step up, take charge, and
+            inspire others was a defining chapter of my life. Being <em>capable of initiating things</em>
+            is something that makes me deeply proud to this day.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="section-wrap">
+    <div class="section-title">
+      <h2>Get In Touch</h2>
+      <div class="divider"></div>
+      <p>Let's connect and create something amazing</p>
+    </div>
+    <div class="contact-inner">
+      <p>
+        Whether you want to collaborate on a tech project, talk about AI, discuss career paths,
+        or just say hello — my inbox is always open! 💌
+      </p>
+      <div class="contact-cards">
+        <a class="contact-card" href="mailto:kritikagarg1611@gmail.com">
+          <span class="contact-icon">📧</span>
+          kritikagarg1611@gmail.com
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Designed &amp; built with <span>♥</span> &nbsp;·&nbsp; © 2026 Kritika Garg &nbsp;·&nbsp; All rights reserved</p>
+  <p style="margin-top:.4rem;font-size:.75rem;">Dream Big · Work Hard · Fly High ✈️</p>
+</footer>
+
+<!-- ── SCRIPTS ── -->
+<script>
+  /* ----- Particle generator ----- */
+  const container = document.getElementById('particles');
+  const colors = ['#00e5ff','#e040fb','#ffd740','#6c3fc5','#5dff9a'];
+  for (let i = 0; i < 55; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 7 + 2;
+    p.style.cssText = `
+      width:${size}px; height:${size}px;
+      left:${Math.random()*100}%;
+      background:${colors[Math.floor(Math.random()*colors.length)]};
+      animation-duration:${Math.random()*14+8}s;
+      animation-delay:${Math.random()*10}s;
+      box-shadow:0 0 ${size*2}px ${colors[Math.floor(Math.random()*colors.length)]};
+    `;
+    container.appendChild(p);
+  }
+
+  /* ----- Hamburger ----- */
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+
+  /* ----- Close menu on nav link click ----- */
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  });
+
+  /* ----- Intersection observer fade-in ----- */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.card, .hobby-card, .achievement-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity .6s ease, transform .6s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
+
+
